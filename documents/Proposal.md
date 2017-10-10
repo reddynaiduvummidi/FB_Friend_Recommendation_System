@@ -10,7 +10,7 @@ To begin building the dataset, we will use the Facebook Graph API, it is the pri
 Due to the rate limitation of Graph API calls, according to the Facebook Graph API documentation: 
 > Your app can make 200 calls per hour per user in aggregate. This limit is calculated based on the number of calls made in the previous hour. When your app is rate limited, all calls for the app are limited, not just ones for a specific user.
 
-Here is our preliminary way of approach: for each of our group member, we will randomly pick 15 of friends from the friend list. 
+Here is our preliminary way of approach: for each of our group member, we will randomly pick 15 of friends from the friend list.
 ## Questions to answer
 
 ## Algorithms to apply
