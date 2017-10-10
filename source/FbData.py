@@ -22,7 +22,7 @@ class FbData(object):
         response = requests.get("https://graph.facebook.com/v2.10/" + req,
                      {'access_token':self.accessToken})
         print (response)
-        return response.json()
+        return response.json()["id"], response.json()
 
     def CollectData(self, queryFilename):
         """
@@ -42,8 +42,8 @@ class FbData(object):
         """
         with open(queryFilename,"r") as f:
             query = f.readline()
-            data = self.reqData(query)
-            self.writeData(data, "../output/1.txt")
+            userId, data = self.reqData(query)
+            self.writeData(data, userId)
 
     def writeData(self, data, filename):
         """
@@ -53,6 +53,7 @@ class FbData(object):
         :param filename: filename to be written on the system
         :return: None
         """
+        filename = "../output/{0}".format(filename)
         with open(filename, "wb") as fileHandler:
             pickle.dump(data, fileHandler, protocol=pickle.HIGHEST_PROTOCOL)
 
@@ -65,7 +66,6 @@ class FbData(object):
         """
         with open(filename, "rb") as fileHandler:
             data = pickle.load(fileHandler)
-            print (data)
 
 
 
@@ -79,7 +79,6 @@ def main():
 
     fb = FbData()
     fb.CollectData(queryFilename)
-    fb.readData("../output/1.txt")
 
 if __name__ == "__main__":
     main()
