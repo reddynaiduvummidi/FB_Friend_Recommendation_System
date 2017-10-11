@@ -5,7 +5,7 @@
 ## Dataset to be analyzed
 In our project, we will implement a simpler version of Facebook friends' recommendation system by using the unsupervised learning method. 
 
-We have 2 datasets, containing different type of info to begin with:
+We have 2 datasets, containing different types of info to begin with:
 1) Dataset1:   
 
          | 1 | 2 | \N|
@@ -16,11 +16,11 @@ We have 2 datasets, containing different type of info to begin with:
         
 Each line contains two anonymized user identifiers, showing the second user is accepted by the first as a friend. Finally, the third column is a UNIX timestamp with the time of link establishment (if it could be determined, otherwise it is '\N').
 
-There are two main purpose for this relatively  small size of dataset: 
+There are two main purposes for this relatively small size of dataset: 
 * We will use this dataset to see if there is a strong connection between friends by using the Graph class, and also to determine if the level that we currently reached is far enough. 
 * It will be used as a test to see how good our algorithm works before trying on the real one
         
-2) Dataset2:  To begin building the dataset, we will use the Facebook Graph API, it is the primary way to get data out of, and put data into, Facebook's platform. It's a low-level HTTP-based API which allows us to get the list of friends along with their features (birthday, education, likes, events user went to, etc) and then convert the response into json format for future working. 
+2) Dataset2:  To begin building the dataset, we will use the Facebook Graph API, it is the primary way to get data out of, and put data into, Facebook's platform. It's a low-level HTTP-based API which allows us to get the list of friends along with their features (birthday, education, likes, events user went to, etc.) and then convert the response into json format for future working. 
 
 Due to the rate limitation of Graph API calls, according to the Facebook Graph API documentation: 
 > Your app can make 200 calls per hour per user in aggregate. This limit is calculated based on the number of calls made in the previous hour. When your app is rate limited, all calls for the app are limited, not just ones for a specific user.
@@ -43,17 +43,19 @@ For each of the friend, we will get the following aspect of information:
 And for those two datasets, we have created a ipython notebook for data extraction, and we will include more detailed information in the next update. 
 
 ## Questions to answer
-1) a) Recommend friend by no. of common friends.
-       b) Recommend friend by no. of common friends and common features (likes, events)
-       
-       Question to ask: Does the algorithm makes a difference?
+    
+1) a) Recommend friends by number of common friends.
+   b) Recommend friends by number of common friends and common features that we have previously extracted
+            
+       Question to answer: We will compare the result from these two algorithms, to see if the 
+       recommendation make a difference
        
 2) Exploratory Data Analysis:
        a) How different groups tend to cluster? e.g. In a Karatte-club group, explore the cluster that is formed by the users’ interconnection. How does it look? Are there any obvious grouping between different members?
        b) What are the features that makes a particular user with large number of followers popular?
 
-3) How good is my Recommendation? 
-        To solve this problem, start with two friends F1 and F2. Remove friend link between them. Run the recommendation program for User F1 and get rank of F2. Now run the recommendation program for F2 and get rank of F1. Does these make sense? An ideal algorithm should suggest F1 to F2 and vice-versa with equal confidence.
+3) How to validate the recommendation system? 
+        We will start with two friends F1 and F2 which we previously know they are friends with each other. Then, we remove friend link between them. Run the recommendation program for User F1 and get rank of F2. Now run the recommendation program for F2 and get rank of F1. An ideal algorithm should suggest F1 to F2 and vice-versa with similar confidence.
         
 
 ## Algorithms to apply
