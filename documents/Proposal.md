@@ -43,8 +43,12 @@ Here is our preliminary way of approach: for each of our group member, we will r
     2) Recommendation based on no. of common friends
 
 ## Group work division
-    1) Divide the task of building of recommendation system using 4 different algorithms per person. This way each of us get to learn the inside out of a particular algorithm and can then share thier respective findings with advantages and disadvantages.
+    1) Divide the task of building of recommendation system using 4 different algorithms per person. 
+    This way each of us get to learn the inside out of a particular algorithm and can then share thier respective 
+    findings with advantages and disadvantages.
     
-    2) Divide the work of exploratory data analysis. The dataset with this much richness in itself possess a lot of potential for exploratory data analysis. We propose to use NetworkX library of python to do that for starter.
+    2) Divide the work of exploratory data analysis. The dataset with this much richness in itself possess a 
+    lot of potential for exploratory data analysis. We propose to use NetworkX library of python to do that for starter.
     
-    3) We propose to use 'github issue resolving feature' to monitor and fix the errors in the code. Assign developer the issue online and then the developer would be tasked to fix the same.
+    3) We propose to use 'github issue resolving feature' to monitor and fix the errors in the code. 
+    Assign developer the issue online and then the developer would be tasked to fix the same.
