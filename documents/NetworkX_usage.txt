@@ -1,0 +1,104 @@
+1) Creating a un-directed graph using networkX library in Python
+
+	import networkx as nx
+	G = nx.Graph()
+	G.add_edge('A','B', relation = 'friend', weight = locationA-locationB)
+	G.add_edge('A','C', relation = 'family', weight = locationC-locationC)
+	
+	G1.add_edges_from([(0, 1),
+                   (0, 2),
+                   (0, 3),
+                   (0, 5),
+                   (1, 3),
+                   (1, 6),
+                   (3, 4),
+                   (4, 5),
+                   (4, 7),
+                   (5, 8),
+                   (8, 9)])
+
+		# draw the network G1
+		nx.draw_networkx(G1)
+	
+	
+2) Creating a multiGraph using networkX library in Python : Based upon the idea, two people can share multiple relations.
+
+	import networkx as nx
+	G = nx.MulitGraph()
+	G.add_edge('A','B', relation = 'Friend')
+	G.add_edge('A','B', relation = 'coworker')
+	
+	
+I believe in out project, we want to build multiGraph with weigthed edges, where different nodes in our graphs are
+FB user, and they can share multiple relationships and weights between the edges can show:
+			a) strength of connection: no. of times tagged together in photo, no. of common friends, etc
+			b) location distance between two.
+			
+			
+3) How to use networkX library
+
+	a) In: G.edges() # list all edges
+	   Out: [('A', 'B'), ('C','B')]
+	   
+	   In: G.edges(data = True) # list all edges with  attributes
+	   Out: ['C','B',{'relation':'friend','weight':13}]
+	   
+	   In: G.edges(data = 'relation') #list all edges with attributes relation
+	   Out: [('A','B','family'),('C','B','friend')]
+	   
+	b) Accessing attributes of specific edge
+	
+		In: G.edge['A']['B']
+		Out: {'relation':'family', 'weight':6}
+		
+		In: G.edge['B']['C']['weight']
+		Out: 13
+		
+	c) Adding Node attributes:
+		
+		G=nx.Graph()
+		G.add_edge('A','B', weight =6, relation='family')
+		G.add_edge('B','C', weight =13, relation='friend')
+		
+		G.add_node('A', role='trader')
+		G.add_node('B', role='Manager')
+		
+		
+		In: G.nodes()
+		Out: ['A','C','B']
+		
+		In: G.nodes(data=True) #list all nodes with attributes
+		Out: [('A',{'role':'trader'}),('B', {'role':'Manager'})]
+
+		In: G.node['A']['role']
+		Out: trader
+		
+4) Local clusering coefficient of node
+	G.transitivity - clustering coefficient for whole graph (transitivity : weights the nodes with higher degree higher)
+	also, we can compute clustering for whole graph by using : average_clustering
+	average_shortest_path_length
+	G.diameter
+	nx.eccentricity(G) # largest distance between node n, and all other nodes.
+	
+	radius of the graph is minimum eccentricity
+	
+	# periphery of the graph is the set of nodes who have eccentricty equals diameter
+	
+	# center of graph is set of nodes having eccentricity equals radius
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
