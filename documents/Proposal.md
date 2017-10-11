@@ -47,8 +47,7 @@ And for those two datasets, we have created a ipython notebook for data extracti
 1) a) Recommend friends by number of common friends.
    b) Recommend friends by number of common friends and common features that we have previously extracted
             
-       Question to answer: We will compare the result from these two algorithms, to see if the 
-       recommendation make a difference
+       Question to answer: We will compare the result from these two algorithms, to see if the recommendation make a difference
        
 2) Exploratory Data Analysis:
        a) How different groups tend to cluster? e.g. In a Karatte-club group, explore the cluster that is formed by the users’ interconnection. How does it look? Are there any obvious grouping between different members?
