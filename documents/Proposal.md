@@ -22,6 +22,8 @@ Due to the rate limitation of Graph API calls, according to the Facebook Graph A
 > Your app can make 200 calls per hour per user in aggregate. This limit is calculated based on the number of calls made in the previous hour. When your app is rate limited, all calls for the app are limited, not just ones for a specific user.
 
 Here is our preliminary way of approach: for each of our group member, we will randomly pick 15 of friends from our friend list, we call it level 1 friends. And then, for each level 1 friend that we chose, we will extract 25 friennds from the list, and we call them level 2 friends. After that, we will do the same thing for each friend on level 2, getting 25 freinds out of the list. After that, for each member in our group, we will 9375 various levels of friends to be analyzed. For each of friend, we will get the following aspect of information
+
+![friends_node](Friends_node.png)
 ## Questions to answer
 
     1) a) Recommend friend by no. of common friends.
