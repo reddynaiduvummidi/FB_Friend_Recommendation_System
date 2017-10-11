@@ -43,7 +43,7 @@ Here is our preliminary way of approach: for each of our group member, we will r
     2) Recommendation based on no. of common friends
 
 ## Group work division
-    1) Divide the task of building of recommendation system using 4 different algorithms per person. 
+    1) Divide the task of building of recommendation system using different algorithms. 
     This way each of us get to learn the inside out of a particular algorithm and can then share thier respective 
     findings with advantages and disadvantages.
     
