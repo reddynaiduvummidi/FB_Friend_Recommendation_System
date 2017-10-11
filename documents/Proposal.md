@@ -39,4 +39,7 @@ Here is our preliminary way of approach: for each of our group member, we will r
 
 ## Algorithms to apply
 
+    1) To Recommend a friend to a user, we can start with FP-growth algorithm from market basket analysis. Transactions here are a list of friends for particular users. We use FP-growth to determine the associations between users and Recommend friends based on that.
+    2) Recommendation based on no. of common friends
+
 ## Group work division
