@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49061338-d92f-4ca5-9374-b4f97a8a2a48" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/source/FbData.py" afterPath="$PROJECT_DIR$/source/1_FbData.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/10207648390994439" afterPath="$PROJECT_DIR$/output/10207648390994439" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notebook/1_BuildAdjaceny_List.ipynb" afterPath="$PROJECT_DIR$/notebook/1_BuildAdjaceny_List.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notebook/2_ParseFbData.ipynb" afterPath="$PROJECT_DIR$/notebook/2_ParseFbData.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +21,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="1_FbData.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="1_FbData.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/1_FbData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="82" selection-end-column="10" />
+            <state relative-caret-position="255">
+              <caret line="50" column="49" lean-forward="true" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -36,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2_ParseFbData.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2_ParseFbData.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/2_ParseFbData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+            <state relative-caret-position="88">
+              <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -565,20 +562,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/1_FbData.py">
+    <entry file="file://$PROJECT_DIR$/source/2_ParseFbData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="82" selection-end-column="10" />
+        <state relative-caret-position="88">
+          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/2_ParseFbData.py">
+    <entry file="file://$PROJECT_DIR$/source/1_FbData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="25" column="24" lean-forward="true" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+        <state relative-caret-position="255">
+          <caret line="50" column="49" lean-forward="true" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
