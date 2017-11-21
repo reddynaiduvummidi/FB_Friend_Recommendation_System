@@ -1,5 +1,4 @@
 import os
-import pprint
 import requests
 import pickle
 
