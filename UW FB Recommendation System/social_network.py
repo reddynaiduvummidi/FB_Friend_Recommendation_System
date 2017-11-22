@@ -3,82 +3,6 @@ import matplotlib.pyplot as plt
 import operator
 import random
 
-# Create a practice graph
-practice_graph = nx.Graph()
-
-# add the node in the practice graph
-practice_graph.add_node("A")
-practice_graph.add_node("B")
-practice_graph.add_node("C")
-practice_graph.add_node("D")
-practice_graph.add_node("E")
-practice_graph.add_node("F")
-
-# add the edge in the practice graph
-practice_graph.add_edge("A", "B")
-practice_graph.add_edge("A", "C")
-practice_graph.add_edge("B", "C")
-practice_graph.add_edge("B", "D")
-practice_graph.add_edge("C", "D")
-practice_graph.add_edge("C", "F")
-practice_graph.add_edge("D", "E")
-practice_graph.add_edge("D", "F")
-
-def draw_practice_graph():
-    """Draw practice_graph to the screen."""
-    nx.draw(practice_graph)
-    plt.show()
-
-# Comment out this line after you have visually verified your practice graph.
-# Otherwise, the picture will pop up every time that you run your program.
-# draw_practice_graph()
-
-# Create the Romeo-Juliet graph
-rj = nx.Graph()
-
-# add the node in the Romeo-Juliet graph
-rj.add_node("Nurse")
-rj.add_node("Juliet")
-rj.add_node("Capulet")
-rj.add_node("Tybalt")
-rj.add_node("Romeo")
-rj.add_node("Friar Laurence")
-rj.add_node("Benvolio")
-rj.add_node("Montague")
-rj.add_node("Escalus")
-rj.add_node("Mercutio")
-rj.add_node("Paris")
-
-# add the edge in the Romeo-Juliet graph
-rj.add_edge("Nurse", "Juliet")
-rj.add_edge("Juliet", "Tybalt")
-rj.add_edge("Juliet", "Friar Laurence")
-rj.add_edge("Juliet", "Romeo")
-rj.add_edge("Juliet", "Capulet")
-rj.add_edge("Capulet", "Tybalt")
-rj.add_edge("Capulet", "Escalus")
-rj.add_edge("Capulet", "Paris")
-rj.add_edge("Paris", "Escalus")
-rj.add_edge("Paris", "Mercutio")
-rj.add_edge("Escalus", "Mercutio")
-rj.add_edge("Escalus", "Montague")
-rj.add_edge("Mercutio", "Romeo")
-rj.add_edge("Romeo", "Montague")
-rj.add_edge("Montague", "Benvolio")
-rj.add_edge("Romeo", "Benvolio")
-rj.add_edge("Romeo", "Friar Laurence")
-
-def draw_rj():
-    """Draw the rj graph to the screen and to a file."""
-    nx.draw(rj)
-    plt.savefig("romeo-and-juliet.pdf")
-    plt.show()
-
-# Comment out this line after you have visually verified your rj graph and
-# created your PDF file.
-# Otherwise, the picture will pop up every time that you run your program.
-# draw_rj()
-
 def friends(graph, user):
     """Returns a set of the friends of the given user, in the given graph.
     The parameter 'user' is the string name of a person in the graph.
@@ -185,18 +109,6 @@ def recommend_by_influence(graph, user):
 
     return res
 
-unchanged = []
-changed = []
-
-for friend in rj.nodes():
-    res_influence = recommend_by_influence(rj, friend)
-    res_number = recommend_by_number_of_common_friends(rj,friend)
-
-    if (res_influence == res_number):
-        unchanged.append(friend)
-    else:
-        changed.append(friend)
-
 def evaluate_recommendation(graph):
     number_index = []
     influence_index = []
@@ -268,8 +180,6 @@ def evaluate_recommendation(graph):
     else:
         print ("recommend by number of friends in common method is better")
 
-evaluate_recommendation(rj)
-
 '''Create a graph named facebook from the Facebook data in file facebook-links.txt. 
 As above, use the Graph class.'''
 
@@ -284,24 +194,45 @@ and the first user appeared in the second user's friend list.
 Finally, the third column is a UNIX timestamp with the time of link establishment 
 (if it could be determined, otherwise it is unavailable).'''
 
-with open ("facebook-links.txt","r") as file:
-    content = file.readlines()
-for i in range(len(content)):
-    point1 = content[i].split("\t")[0]
-    if point1 not in facebook:
-        facebook.add_node(point1)
+def open_source_file(filename):
+    with open (filename,"r") as file:
 
-    point2 = content[i].split("\t")[1]
-    if point2 not in facebook:
-        facebook.add_node(point2)
-    facebook.add_edge(point1,point2)
+        if filename == "facebook-links.txt":
+            content = file.readlines()
+            for i in range(len(content)):
+                point1 = content[i].split("\t")[0]
+                if point1 not in facebook:
+                    facebook.add_node(point1)
+
+                point2 = content[i].split("\t")[1]
+                if point2 not in facebook:
+                    facebook.add_node(point2)
+                facebook.add_edge(point1,point2)
+
+        elif filename == "facebook_combined.txt":
+            result = [x.strip("\n") for x in file.readlines()]
+
+            for i in range(len(result)):
+                point1 = result[i].split(" ")[0]
+                if point1 not in facebook:
+                    facebook.add_node(point1)
+
+                point2 = result[i].split(" ")[1]
+                if point2 not in facebook:
+                    facebook.add_node(point2)
+                facebook.add_edge(point1,point2)
+
+        else:
+            print ("Not a valid file, please check again")
+        
+open_source_file("facebook_combined.txt")
 
 def draw_facebook_graph():
     '''Draw facebook to the screen.'''
     nx.draw(facebook)
     plt.show()
 
-# Comment out this line after you have visually verified your practice graph.
+# Comment out this line after you have visually verified your graph.
 # Otherwise, the picture will pop up every time that you run your program.
 # draw_facebook_graph()
 
@@ -311,29 +242,29 @@ print a list containing the first 10 friend recommendations,
 as determined by number of common friends. 
 If there are fewer than 10 recommendations, 
 print all the recommendations.
-'''
+
 rec_num_of_friends = []
 for i in range(len(facebook.nodes())):
     if ((i%1000 == 0) and (str(i) in facebook)):
         rec_num_of_friends.append(recommend_by_number_of_common_friends(facebook,str(i))[:10])
 
-'''
+
 For every Facebook user with an id that is a multiple of 1000, 
 print a list containing the first 10 friend recommendations, 
 as determined by influence score. 
 If there are fewer than 10 recommendations, 
 print all the recommendations.
-'''
+
 rec_influence = []
 for i in range(len(facebook.nodes())):
     if ((i%1000 == 0) and (str(i) in facebook)):
         rec_influence.append(recommend_by_influence(facebook,str(i))[:10])
 
-'''
+
 Considering only those 63 Facebook users with an id that is a multiple of 1000, 
 compute and print the number of Facebook users who have the same first 10 friend recommendations,
 and the number of Facebook users who have different first 10 friend recommendations under the two recommendations
-'''
+
 unchanged = 0
 changed = 0
 for i in range(len(rec_influence)):
@@ -343,8 +274,8 @@ for i in range(len(rec_influence)):
         changed += 1
 print ("Same:",unchanged,"Different:",changed)
 
-'''
+
 Present the average index for each recommendation system. 
-State which recommendation system is better for the facebook graph.
-'''
+State which recommendation system is better for the facebook graph.'''
+
 evaluate_recommendation(facebook)
