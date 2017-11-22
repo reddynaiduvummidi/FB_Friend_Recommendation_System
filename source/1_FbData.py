@@ -60,7 +60,7 @@ class FbData(object):
         """
         Method reads the facebook Graph API dump data already stored on the
         disk in pickle format. The data is in JSON format
-        :param filename : filename for the data stored on the i=disk
+        :param filename : filename for the data stored on the disk
         :return : None
         """
         with open(filename, "rb") as fileHandler:
